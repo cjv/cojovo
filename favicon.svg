@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1a0d2e"/>
+  
+  <!-- Terminal prompt symbol -->
+  <path d="M 8 10 L 12 16 L 8 22" stroke="#d4b3ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Cursor -->
+  <rect x="15" y="19" width="8" height="3" fill="#d4b3ff"/>
+</svg>
