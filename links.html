@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cojovo - links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkeley+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-dark: #1a0d2e;
+            --purple-medium: #2d1b4e;
+            --purple-accent: #7b4fb8;
+            --purple-light: #b794f6;
+            --purple-bright: #d4b3ff;
+            --text-primary: #e8dff5;
+            --text-secondary: #b8a3d9;
+            --text-dim: #7b6b8f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--purple-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Simple scanline background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(123, 79, 184, 0.03) 0px,
+                    rgba(0, 0, 0, 0.2) 1px,
+                    transparent 2px,
+                    rgba(123, 79, 184, 0.03) 3px
+                ),
+                radial-gradient(
+                    ellipse at center,
+                    transparent 0%,
+                    rgba(26, 13, 46, 0.6) 100%
+                );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-family: 'Berkeley Mono', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--purple-bright);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .location {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .links-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Berkeley Mono', monospace;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--purple-light);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: lowercase;
+        }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .link-card {
+            display: block;
+            background: rgba(45, 27, 78, 0.4);
+            border: 1px solid var(--purple-medium);
+            padding: 18px 24px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(183, 148, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:hover {
+            border-color: var(--purple-accent);
+            background: rgba(45, 27, 78, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .link-card:active {
+            transform: translateY(0);
+        }
+
+        .link-title {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .link-icon {
+            font-style: normal;
+            font-size: 18px;
+        }
+
+        .link-description {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-card {
+            display: block;
+            background: rgba(45, 27, 78, 0.3);
+            border: 1px solid var(--purple-medium);
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            border-color: var(--purple-accent);
+            color: var(--purple-bright);
+            background: rgba(45, 27, 78, 0.5);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--purple-medium);
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--purple-light);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .link-card {
+                padding: 16px 20px;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>courtney johnston von nieda</h1>
+            <p class="tagline">art • sound • puzzles</p>
+            <p class="location">staff technical product manager</p>
+            <p class="location">kansas city, usa</p>
+        </header>
+
+        <div class="links-section">
+            <h2 class="section-title">// connect</h2>
+            <div class="social-grid">
+                <a href="https://github.com/cjv" class="social-card" target="_blank">github</a>
+                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-card" target="_blank">linkedin</a>
+                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-card" target="_blank">bluesky</a>
+                <a href="https://hachyderm.io/@cojovo" class="social-card" target="_blank">mastodon</a>
+                <a href="https://www.instagram.com/heycojovo/" class="social-card" target="_blank">instagram</a>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2 class="section-title">// current</h2>
+            <div class="link-list">
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">✍️</span>
+                        Technically Here
+                    </div>
+                    <div class="link-description">my technical focus blog</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2 class="section-title">// past projects</h2>
+            <div class="link-list">
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">📊</span>
+                        Interactive Visualization
+                    </div>
+                    <div class="link-description">data viz with D3.js</div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">🎨</span>
+                        Art Installation 2023
+                    </div>
+                    <div class="link-description">physical installation docs</div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">🌀</span>
+                        Generative Art Collection
+                    </div>
+                    <div class="link-description">algorithm-based artwork</div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">📝</span>
+                        Writing Archive
+                    </div>
+                    <div class="link-description">collected essays & thoughts</div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <div class="link-title">
+                        <span class="link-icon">🔗</span>
+                        Another Project
+                    </div>
+                    <div class="link-description">context & details</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <a href="index.html" class="footer-link">view full site →</a>
+        </footer>
+    </div>
+</body>
+</html>
