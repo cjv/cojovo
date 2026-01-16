@@ -17,7 +17,7 @@
             --purple-bright: #d4b3ff;
             --text-primary: #e8dff5;
             --text-secondary: #b8a3d9;
-            --text-dim: #7b6b8f;
+            --text-dim: #9d8db5;
         }
 
         * {
@@ -257,6 +257,45 @@
             color: var(--purple-light);
         }
 
+        /* Focus indicators for keyboard navigation */
+        a:focus-visible,
+        .social-card:focus-visible,
+        .link-card:focus-visible,
+        .footer-link:focus-visible {
+            outline: 2px solid var(--purple-bright);
+            outline-offset: 3px;
+        }
+
+        /* Skip link styles */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--purple-bright);
+            color: var(--purple-dark);
+            padding: 8px 16px;
+            z-index: 1001;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 30px 16px;
@@ -277,7 +316,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <main id="main" class="container">
         <header>
             <h1>courtney johnston von nieda</h1>
             <p class="tagline">art • sound • puzzles</p>
@@ -286,23 +326,24 @@
         </header>
 
         <div class="links-section">
-            <h2 class="section-title">// connect</h2>
+            <h2 class="section-title" aria-label="Connect">// connect</h2>
             <div class="social-grid">
-                <a href="https://github.com/cjv" class="social-card" target="_blank">github</a>
-                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-card" target="_blank">linkedin</a>
-                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-card" target="_blank">bluesky</a>
-                <a href="https://hachyderm.io/@cojovo" class="social-card" target="_blank">mastodon</a>
-                <a href="https://www.instagram.com/heycojovo/" class="social-card" target="_blank">instagram</a>
+                <a href="https://github.com/cjv" class="social-card" target="_blank" rel="noopener">github<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-card" target="_blank" rel="noopener">linkedin<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-card" target="_blank" rel="noopener">bluesky<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://hachyderm.io/@cojovo" class="social-card" target="_blank" rel="noopener">mastodon<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://www.instagram.com/heycojovo/" class="social-card" target="_blank" rel="noopener">instagram<span class="sr-only"> (opens in new tab)</span></a>
             </div>
         </div>
 
         <div class="links-section">
-            <h2 class="section-title">// current</h2>
+            <h2 class="section-title" aria-label="Current">// current</h2>
             <div class="link-list">
-                <a href="https://www.technicallyhere.com" class="link-card" target="_blank">
+                <a href="https://www.technicallyhere.com" class="link-card" target="_blank" rel="noopener">
                     <div class="link-title">
-                        <span class="link-icon">✍️</span>
+                        <span class="link-icon" aria-hidden="true">✍️</span>
                         Technically Here
+                        <span class="sr-only"> (opens in new tab)</span>
                     </div>
                     <div class="link-description">my technical focus blog</div>
                 </a>
@@ -310,21 +351,23 @@
         </div>
 
         <div class="links-section">
-            <h2 class="section-title">// other links</h2>
+            <h2 class="section-title" aria-label="Other links">// other links</h2>
             <div class="link-list">
-                <a href="http://www.instagram.com/panopretty" class="link-card" target="_blank">
+                <a href="http://www.instagram.com/panopretty" class="link-card" target="_blank" rel="noopener">
                     <div class="link-title">
-                        <span class="link-icon">📸</span>
+                        <span class="link-icon" aria-hidden="true">📸</span>
                         PanoPretty
+                        <span class="sr-only"> (opens in new tab)</span>
                     </div>
                     <div class="link-description">panorama photo IG account</div>
                 </a>
             </div>
             <div class="link-list">
-                                <a href="https://tidal.com/playlist/2ac557b5-8112-4c8d-814b-bfed07e638c1" class="link-card" target="_blank">
+                <a href="https://tidal.com/playlist/2ac557b5-8112-4c8d-814b-bfed07e638c1" class="link-card" target="_blank" rel="noopener">
                     <div class="link-title">
-                        <span class="link-icon">🎵</span>
+                        <span class="link-icon" aria-hidden="true">🎵</span>
                         Perfect Songs
+                        <span class="sr-only"> (opens in new tab)</span>
                     </div>
                     <div class="link-description">my perfect songs playlist</div>
                 </a>
@@ -334,6 +377,6 @@
         <footer>
             <a href="http://www.cojovo.com" class="footer-link">go to cojovo.com →</a>
         </footer>
-    </div>
+    </main>
 </body>
 </html>
