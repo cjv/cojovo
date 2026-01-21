@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cojovo - links</title>
+    <title>cojovo - courtney johnston von nieda's pixels of record</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Berkeley+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkeley+Mono:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    
+
     <style>
-         :root {
+        :root {
             --purple-dark: #1a0d2e;
             --purple-medium: #2d1b4e;
             --purple-accent: #7b4fb8;
@@ -21,7 +21,6 @@
             --text-dim: #9d8db5;
             --cursor: #d4b3ff;
         }
-
 
         * {
             margin: 0;
@@ -334,7 +333,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
+            background: 
                 /* Strong scanlines */
                 repeating-linear-gradient(
                     0deg,
@@ -370,7 +369,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
+            background: 
                 /* Corner darkening for CRT effect */
                 radial-gradient(
                     ellipse at center,
@@ -392,213 +391,69 @@
             pointer-events: none;
             z-index: -1;
         }
-
-        .location {
-            color: var(--text-dim);
-            font-size: 14px;
-        }
-        .links-container {
-            max-width: 680px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .links-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-family: 'Berkeley Mono', monospace;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--purple-light);
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-            text-transform: lowercase;
-        }
-
-        .link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .link-card {
-            display: block;
-            background: rgba(45, 27, 78, 0.4);
-            border: 1px solid var(--purple-medium);
-            padding: 18px 24px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(183, 148, 246, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .link-card:hover::before {
-            left: 100%;
-        }
-
-        .link-card:hover {
-            border-color: var(--purple-accent);
-            background: rgba(45, 27, 78, 0.6);
-            transform: translateY(-2px);
-        }
-
-        .link-card:active {
-            transform: translateY(0);
-        }
-
-        .link-title {
-            font-size: 17px;
-            font-weight: 500;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .link-icon {
-            font-style: normal;
-            font-size: 18px;
-        }
-
-        .link-description {
-            font-size: 13px;
-            color: var(--text-dim);
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .social-card {
-            display: block;
-            background: rgba(45, 27, 78, 0.3);
-            border: 1px solid var(--purple-medium);
-            padding: 16px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 14px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .social-card:hover {
-            border-color: var(--purple-accent);
-            color: var(--purple-bright);
-            background: rgba(45, 27, 78, 0.5);
-        }
-
-        .footer-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--purple-light);
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 30px 16px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            .link-card {
-                padding: 16px 20px;
-            }
-
-            .social-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <div class="grain"></div>
+
     <main id="main" class="container">
         <header>
-                        <div class="prompt">$ cat ~/linksinbio.txt</div>
-
-            <h1>courtney johnston von nieda</h1>
-            <p class="tagline">what's current and relevant and fun</p>
-
+            <div class="prompt">$ cat ~/blank.txt</div>
+            <h1>courtney johnston von nieda<span class="cursor"></span></h1>
+            <p class="tagline">
+                This is the subheading for this page.
+            </p>
         </header>
 
-        <div class="links-section">
-            <h2 class="section-title" aria-label="Connect">// connect</h2>
-            <div class="social-grid">
-                <a href="https://github.com/cjv" class="social-card" target="_blank" rel="noopener">github<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-card" target="_blank" rel="noopener">linkedin<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-card" target="_blank" rel="noopener">bluesky<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://hachyderm.io/@cojovo" class="social-card" target="_blank" rel="noopener">mastodon<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://www.instagram.com/heycojovo/" class="social-card" target="_blank" rel="noopener">instagram<span class="sr-only"> (opens in new tab)</span></a>
-            </div>
-        </div>
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">About</h2>
+            <p class="about-text">
+                This is the about for this specific page. You may need multiple about-text classes in this section.
+            </p>
+        </section>
 
-        <div class="links-section">
-            <h2 class="section-title" aria-label="Current">// current</h2>
-            <div class="link-list">
-                <a href="https://www.technicallyhere.com" class="link-card" target="_blank" rel="noopener">
-                    <div class="link-title">
-                        <span class="link-icon" aria-hidden="true">✍️</span>
-                        Technically Here
-                        <span class="sr-only"> (opens in new tab)</span>
+        <section aria-labelledby="current-projects-heading">
+            <h2 id="current-projects-heading">Current Thing</h2>
+            <ul class="project-list">
+                <li class="project-item">
+                    Insert the content of the page here.
+                    <div class="project-meta">
+                        This is tiny if you need it.
                     </div>
-                    <div class="link-description">my technical focus blog</div>
-                </a>
-            </div>
-        </div>
+                </li>
+            </ul>
+        </section>
 
-        <div class="links-section">
-            <h2 class="section-title" aria-label="Other links">// other links</h2>
-            <div class="link-list">
-                <a href="http://www.instagram.com/panopretty" class="link-card" target="_blank" rel="noopener">
-                    <div class="link-title">
-                        <span class="link-icon" aria-hidden="true">📸</span>
-                        PanoPretty
-                        <span class="sr-only"> (opens in new tab)</span>
-                    </div>
-                    <div class="link-description">panorama photo IG account</div>
-                </a>
+
+        <section aria-labelledby="connect-heading">
+            <h2 id="connect-heading">Connect</h2>
+            <div class="social-links">
+                <a href="https://github.com/cjv" class="social-link" target="_blank" rel="noopener">github<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-link" target="_blank" rel="noopener">linkedin<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-link" target="_blank" rel="noopener">bluesky<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://hachyderm.io/@cojovo" class="social-link" target="_blank" rel="noopener">mastodon<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="https://www.instagram.com/heycojovo/" class="social-link" target="_blank" rel="noopener">instagram<span class="sr-only"> (opens in new tab)</span></a>
+                <a href="http://www.cojovo.com/links/index.html" class="social-link">social link list</a>
             </div>
-            <div class="link-list">
-                <a href="https://tidal.com/playlist/2ac557b5-8112-4c8d-814b-bfed07e638c1" class="link-card" target="_blank" rel="noopener">
-                    <div class="link-title">
-                        <span class="link-icon" aria-hidden="true">🎵</span>
-                        Perfect Songs
-                        <span class="sr-only"> (opens in new tab)</span>
-                    </div>
-                    <div class="link-description">my perfect songs playlist</div>
-                </a>
-            </div>
+        </section>
 
         <footer>
-            <a href="http://www.cojovo.com" class="footer-link">go to cojovo.com →</a>
+            <div>Last updated: January 2026</div>
         </footer>
-        </div>
     </main>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
