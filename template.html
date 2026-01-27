@@ -22,6 +22,7 @@
             --cursor: #d4b3ff;
         }
 
+
         * {
             margin: 0;
             padding: 0;
@@ -238,7 +239,26 @@
         .social-link:hover::after {
             width: 100%;
         }
+        
+        footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid var(--purple-medium);
+            color: var(--text-dim);
+            font-size: 13px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
+        }
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
+        .footer-link:hover {
+            color: var(--purple-light);
+        }
         /* Focus indicators for keyboard navigation */
         a:focus-visible,
         .social-link:focus-visible,
@@ -425,21 +445,8 @@
             </ul>
         </section>
 
-
-        <section aria-labelledby="connect-heading">
-            <h2 id="connect-heading">Connect</h2>
-            <div class="social-links">
-                <a href="https://github.com/cjv" class="social-link" target="_blank" rel="noopener">github<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://www.linkedin.com/in/courtneyjohnston/" class="social-link" target="_blank" rel="noopener">linkedin<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://bsky.app/profile/cojovo.bsky.social" class="social-link" target="_blank" rel="noopener">bluesky<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://hachyderm.io/@cojovo" class="social-link" target="_blank" rel="noopener">mastodon<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="https://www.instagram.com/heycojovo/" class="social-link" target="_blank" rel="noopener">instagram<span class="sr-only"> (opens in new tab)</span></a>
-                <a href="http://www.cojovo.com/links/index.html" class="social-link">social link list</a>
-            </div>
-        </section>
-
         <footer>
-            <div>Last updated: January 2026</div>
+            <a href="http://www.cojovo.com" class="footer-link">go to cojovo.com →</a>        
         </footer>
     </main>
 
